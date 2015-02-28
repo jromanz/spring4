@@ -14,11 +14,12 @@
 		<activemq.version>5.5.0</activemq.version>
 		<spring-batch-infrastructure.version>2.2.0.RC1</spring-batch-infrastructure.version>
 		<spring.ws.version>2.0.1.RELEASE</spring.ws.version>
-		<org.springframework.version>3.2.2.RELEASE</org.springframework.version>
+		<org.springframework.version>4.0.6.RELEASE</org.springframework.version>
 		<org.springframework.security-version>3.0.3.RELEASE</org.springframework.security-version>
 		<spring.integration.version>2.2.1.RELEASE</spring.integration.version>
 		<org.aspectj.version>1.6.11</org.aspectj.version>
 		<mysql.version>5.1.31</mysql.version>
+		<hibernate.version>4.3.6.Final</hibernate.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -251,7 +252,7 @@
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-entitymanager</artifactId>
-				<version>4.0.0.Final</version>
+				<version>${hibernate.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.activemq</groupId>
@@ -513,6 +514,11 @@
 				<version>4.0.0.GA</version>
 			</dependency>
 			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernate.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>4.8.1</version>
@@ -593,6 +599,6 @@
 		</repository>
 	</repositories>
 	<modules>
-		<module>ioc</module>
+		<module>ioc-beans</module>
 	</modules>
 </project>

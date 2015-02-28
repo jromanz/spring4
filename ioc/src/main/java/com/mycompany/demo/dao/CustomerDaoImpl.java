@@ -8,9 +8,13 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.mycompany.demo.entity.Customer;
 
+@Repository
+@Transactional
 public class CustomerDaoImpl implements CustomerDao {
 
 	@Inject
@@ -48,4 +52,13 @@ public class CustomerDaoImpl implements CustomerDao {
 		sessionFactory.getCurrentSession().update(customer);
 	}
 
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	
 }
